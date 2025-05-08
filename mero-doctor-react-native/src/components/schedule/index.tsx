@@ -1,42 +1,24 @@
-// import {Text, View} from 'react-native';
-
-// export const CustomSchedule = () => {
-//   return (
-//     <>
-//       <View
-//         style={{
-//           borderWidth: 1,
-//           borderRadius: 12,
-//           paddingVertical: 4,
-//           paddingHorizontal: 16,
-//           justifyContent: 'center',
-//           alignItems: 'center',
-//           alignSelf: 'flex-start',
-//           marginRight: 8,
-//         }}>
-//         <Text>fmnvf</Text>
-//       </View>
-//     </>
-//   );
-// };
-
 import React from 'react';
 import {FlatList, Text, View, StyleSheet} from 'react-native';
 import {FONTS} from '../../style/fonts';
 import {ScheduleProps} from './type';
 
 const data = [
-  {id: '1', text: 'First'},
-  {id: '2', text: 'Second item'},
-  {id: '3', text: 'Something longer'},
-  {id: '4', text: 'Tiny'},
+  {id: '1', text: 'All'},
+  {id: '2', text: 'Radiology'},
+  {id: '3', text: 'Gastronentrology'},
+  {id: '4', text: 'Cardiology'},
   {id: '5', text: 'Another one'},
 ];
 
-export const CustomSchedule: React.FC<ScheduleProps> = ({style, styleText}) => {
+export const CustomSchedule: React.FC<ScheduleProps> = ({
+  style,
+  styleText,
+  listData = data,
+}) => {
   return (
     <FlatList
-      data={data}
+      data={listData}
       horizontal
       keyExtractor={item => item.id}
       contentContainerStyle={{paddingHorizontal: 8, paddingVertical: 16}}
@@ -61,7 +43,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     justifyContent: 'center',
     alignItems: 'center',
-    alignSelf: 'flex-start', // ⬅️ makes width wrap to content
+    alignSelf: 'flex-start',
     marginRight: 8,
     backgroundColor: '#FFFFFF33',
   },

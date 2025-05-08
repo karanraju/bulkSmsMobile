@@ -1,297 +1,47 @@
 import {Text, View} from 'react-native';
 import {styles} from './styles';
-import { FONTS } from '../../style/fonts';
-import color from '../../style/color';
+import { CustomTimelineProps } from './type';
 
-export const CustomTimeLine = () => {
+export const CustomTimeLine = ({timeTextStyle,borderColor}:CustomTimelineProps) => {
+  const timeLabels = [
+    '', // Empty first label
+    '2AM', '3AM', '4AM', '5AM', '6AM', '7AM', '8AM', '9AM', 
+    '10AM', '11AM', '12AM', '2AM', '2AM', '2AM', '2AM', '2AM', '2AM'
+  ];
+
+  const TimelineItem = ({timeLabel, index}:any) => {
+    return (
+      <View style={{flexDirection: 'row'}}>
+        <View
+          style={{
+            height: 33,
+            width: 23,
+            borderColor: borderColor,
+            borderBottomWidth: 1,
+            borderRightWidth: 1,
+          }}></View>
+        <View style={{marginLeft: -50, marginTop: -9}}>
+          <Text 
+            style={[styles.timeText,timeTextStyle]}>
+            {timeLabel}
+          </Text>
+        </View>
+      </View>
+    );
+  };
+
   return (
-    <View>
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: color.neutral.white,
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={{color: color.neutral.white, fontSize: 10, fontFamily:FONTS.BOLD}}></Text>
-        </View>
+    <>
+      <View style={{padding: 4}}>
+        {timeLabels.map((label, index) => (
+          <TimelineItem 
+            key={index} 
+            timeLabel={label} 
+            index={index} 
+          />
+        ))}
+        <View style={styles.container}></View>
       </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            2AM
-          </Text>
-        </View>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            3AM
-          </Text>
-        </View>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            4AM
-          </Text>
-        </View>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            5AM
-          </Text>
-        </View>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            6AM
-          </Text>
-        </View>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            7AM
-          </Text>
-        </View>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            8AM
-          </Text>
-        </View>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            9AM
-          </Text>
-        </View>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            10AM
-          </Text>
-        </View>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            11AM
-          </Text>
-        </View>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            12AM
-          </Text>
-        </View>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            2AM
-          </Text>
-        </View>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            2AM
-          </Text>
-        </View>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            2AM
-          </Text>
-        </View>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            2AM
-          </Text>
-        </View>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            2AM
-          </Text>
-        </View>
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: 33,
-            width: 23,
-            borderColor: 'white',
-            borderBottomWidth: 1,
-            borderRightWidth: 1,
-          }}></View>
-        <View style={{marginLeft: -42, marginTop: -9}}>
-          <Text style={styles.timeText}>
-            2AM
-          </Text>
-        </View>
-      </View>
-      <View style={styles.container}></View>
-    </View>
+    </>
   );
 };

@@ -63,15 +63,13 @@ const Census: React.FC = () => {
 
   const interactiveData = chartData.map((item, index) => ({
     ...item,
-    // focused: index === activeIndex,
-    // arcWidth: index === activeIndex ? 25 : 20,
     onPress: () => setActiveIndex(index),
   }));
 
   return (
     <View style={styles.container}>
       <View style={styles.row}>
-        <View style={{width: '65%'}}>
+        <View style={{width: '60%'}}>
           <CustomDropdown
             data={censusData}
             value={censusValue}
@@ -105,7 +103,7 @@ const Census: React.FC = () => {
               activeIndex !== null ? (
                 <Text
                   style={{
-                    fontSize: 16,
+                    fontSize: 14,
                     fontFamily: FONTS.SEMIBOLD,
                   }}>
                   Total:234
@@ -113,7 +111,7 @@ const Census: React.FC = () => {
               ) : (
                 <Text
                   style={{
-                    fontSize: 16,
+                    fontSize: 14,
                     fontFamily: FONTS.SEMIBOLD,
                   }}>
                   Total:38
@@ -141,7 +139,7 @@ export default Census;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 12,
+    // padding: 12,
   },
   row: {
     flexDirection: 'row',

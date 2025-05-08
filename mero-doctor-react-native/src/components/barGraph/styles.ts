@@ -9,6 +9,7 @@ export const graphStyles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 20,
     backgroundColor: '#1E1E1EB3',
+    flexWrap: 'wrap',
   },
   tooltip: {
     position: 'absolute',

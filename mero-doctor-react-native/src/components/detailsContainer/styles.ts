@@ -1,5 +1,7 @@
-import { StyleSheet } from "react-native";
-import color from "../../style/color";
+import {StyleSheet} from 'react-native';
+import color from '../../style/color';
+import theme from '../../style/theme';
+import { FONTS } from '../../style/fonts';
 
 export const styles = StyleSheet.create({
     container:{
@@ -14,5 +16,10 @@ export const styles = StyleSheet.create({
         // borderColor:color.green.green100,
         borderColor:color.green.green100,
         borderLeftWidth:4,
+    },
+    title:{
+        color:color.dark.dark50,
+        fontSize:theme.fontSizes.xs,
+        fontFamily:FONTS.MEDIUM
     }
 })

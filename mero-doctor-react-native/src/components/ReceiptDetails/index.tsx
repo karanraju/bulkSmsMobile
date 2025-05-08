@@ -16,7 +16,7 @@ export const ColumnData=({title,data,style,titleStyle,dataStyle}:ColumnDataProps
     return(
         <View style={[styles.row,style]}>
             <Text style={[styles.title,titleStyle]}>{title}</Text>
-            <Text style={[styles.data,dataStyle]}>RS {data}</Text>
+            <Text style={[styles.data,dataStyle]}>{data}</Text>
         </View>
     )
     

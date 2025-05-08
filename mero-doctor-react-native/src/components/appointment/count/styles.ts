@@ -12,11 +12,11 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 5,
     borderRadius: 5,
-    backgroundColor: theme?.colors?.blue?.blue8,
+    backgroundColor: theme?.colors?.blue?.blue80,
   },
   text: {
     fontFamily:FONTS.MEDIUM,
     color: color.neutral.white,
-    fontSize: 13,
+    fontSize: theme.fontSizes.sm,
   },
 });

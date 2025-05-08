@@ -5,7 +5,7 @@ import color from '../../style/color'
 import { FONTS } from '../../style/fonts'
 import TickIcon from '../../assets/svg/TickIcon'
 import theme from '../../style/theme'
-import {styles} from './styles'
+import {prescriptionDetailStyles as styles} from './styles'
 
 const PrescriptionDetails = ({ 
   medicineName = "Ibuprofen",

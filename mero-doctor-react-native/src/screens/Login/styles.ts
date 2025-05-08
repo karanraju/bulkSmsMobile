@@ -116,6 +116,7 @@ export const loginStyles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 24,
+        paddingVertical:12,
       },
       loginButtonText: {
         color: color.white.white100,

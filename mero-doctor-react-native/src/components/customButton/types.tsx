@@ -5,5 +5,6 @@ export interface customButtonProps{
     onPress?:()=>void,
     style?:object,
     titleStyle?:object,
-    icon?:React.ReactNode
+    icon?:React.ReactNode,
+    showRightArrow?:boolean
 } 

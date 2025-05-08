@@ -5,7 +5,7 @@ import theme from '../../style/theme'
 
 export const reportDetailsStyle = StyleSheet.create({
     container:{
-        padding:8,
+        // padding:8,
         gap:8
     },
     title:{

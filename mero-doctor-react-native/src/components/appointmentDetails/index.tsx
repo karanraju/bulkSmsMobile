@@ -1,47 +1,58 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
-import CalendarHospital from '../../assets/svg/CalendarPlus';
 import color from '../../style/color';
 import { FONTS } from '../../style/fonts';
-import DoctorIcon from '../../assets/svg/DoctorIcon';
+import theme from '../../style/theme';
 import QRIcon from '../../assets/svg/QRIcon';
-import {appointMentDetailStyle as styles} from './styles'
 import OptionsIcon from '../../assets/svg/OptionsIcon';
+import CalenderIcon from '../../assets/svg/CalenderIcon';
+import { appointmentDetailStyle as styles } from './styles';
 
-interface appointmentDetailsProps{
-    title:string,
-    dateAndTime:string,
-    name:string,
+interface appointmentDetailsProps {
+  dateAndTime: string,
+  name: string,
+  speciality?: string
 }
 
-const AppointmentDetails = ({title,dateAndTime,name}:appointmentDetailsProps) => {
+const AppointmentDetails = ({ dateAndTime, name, speciality }: appointmentDetailsProps) => {
   return (
     <View style={styles.container}>
-      <View style={styles.leftSection}>
+      <View style={styles.topSection}>
         <View style={styles.row}>
-        <CalendarHospital/>
-        <Text style={styles.title}>{title}</Text>
+          <Image
+            // source={{
+            //   uri: 'https://avatar.iran.liara.run/public/29',
+            // }}
+            source={require('../../assets/png/Doctor1.png')}
+            style={styles.profileImage}
+          />
+          <View>
+            <Text style={styles.title}>{name}</Text>
+            <Text style={styles.speciality}>{speciality}</Text>
+          </View>
         </View>
-        <Text style={styles.dateTime}>{dateAndTime}</Text>
-        <View style={styles.row}>
-            <DoctorIcon/>
-            <Text style={styles.doctor}>{name}</Text>
-        </View>
-      </View>
-      <View style={styles.rightSection}>
-        <TouchableOpacity style={styles.button}>
-            <View style={{paddingHorizontal:4}}>
-                <OptionsIcon/>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-            <QRIcon/>
-            <Text style={styles.buttonText}>Show QR</Text>
+        <TouchableOpacity style={styles.optionsButton}>
+          <OptionsIcon />
         </TouchableOpacity>
       </View>
+      <View style={styles.middleSection}>
+        <View style={styles.row}>
+          <CalenderIcon color={color.dark.dark80} />
+          <Text style={styles.dateTime}>{dateAndTime}</Text>
+        </View>
+        <TouchableOpacity style={styles.statusButton}>
+          <Text style={styles.statusText}>Upcoming</Text>
+        </TouchableOpacity>
+      </View>
+
+      <TouchableOpacity style={styles.qrButton}>
+        <QRIcon />
+        <Text style={styles.qrButtonText}>Show QR</Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
-export default AppointmentDetails;
 
+
+export default AppointmentDetails;

@@ -1,5 +1,5 @@
 export interface LongButtonProps{
-    title:string,
+    title?:string,
     style?:object,
     onPress?:()=>void,
     color?:string,

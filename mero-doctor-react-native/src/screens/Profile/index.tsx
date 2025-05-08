@@ -16,6 +16,7 @@ const SIZE = 120;
 const BOUNDARY_OFFSET = 50;
 
 export const ProfileScreen = () => {
+ 
   const [isDisabled, setIsDisabled] = useState<any>(false);
 
   const width = useSharedValue<number>(400);

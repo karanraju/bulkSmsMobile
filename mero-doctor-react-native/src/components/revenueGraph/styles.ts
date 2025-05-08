@@ -1,13 +1,17 @@
 import {StyleSheet} from 'react-native';
 import color from '../../style/color';
 import {FONTS} from '../../style/fonts';
+import theme from '../../style/theme';
 
 export const revenueGraphstyles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
   },
-  dropdownContainer: {},
+  dropdownContainer: {
+    borderRadius: 3,
+    // elevation: 0.2
+  },
   rightContainer: {
     flex: 1,
     alignItems: 'flex-end',
@@ -22,13 +26,17 @@ export const revenueGraphstyles = StyleSheet.create({
     backgroundColor: color.neutral.lightGray,
     borderRadius: 12,
     padding: 3,
+    width: '100%',
     marginTop: 10,
+    marginBottom: 8,
+    marginRight: 38,
+    flexWrap: 'wrap',
   },
   tabButton: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 2,
+    paddingVertical: 4,
     paddingHorizontal: 8,
     borderRadius: 10,
   },
@@ -37,7 +45,7 @@ export const revenueGraphstyles = StyleSheet.create({
   },
   tabText: {
     fontFamily: FONTS.REGULAR,
-    fontSize: 14,
+    fontSize: theme.fontSizes.xs,
     color: color.neutral.darkGray,
   },
   selectedTabText: {

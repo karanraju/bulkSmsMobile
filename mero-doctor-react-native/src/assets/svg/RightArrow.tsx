@@ -10,8 +10,8 @@ type RightArrowProps = {
 const RightArrow = ({ height, width,color}: RightArrowProps) => {
   return (
     <Svg
-      width={width}
-      height={height}
+      width={width || 16}
+      height={height || 16 }
       viewBox="0 0 5 11"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

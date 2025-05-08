@@ -3,7 +3,7 @@ import { FONTS } from '../../style/fonts'
 import theme from '../../style/theme'
 import color from '../../style/color'
 
-export const styles = StyleSheet.create({
+export const prescriptionDetailStyles = StyleSheet.create({
     container: {
       padding: 12,
       gap: 8,
@@ -29,18 +29,27 @@ export const styles = StyleSheet.create({
     },
     activeText: {
       fontFamily: FONTS.SEMIBOLD,
+      fontSize:theme.fontSizes.xs,
+      // backgroundColor:color.green.green10,
+      // paddingHorizontal: 12,
+      // paddingVertical: 4,
+      // borderRadius: 12,
+      color:color.green.green80
     },
     info: {
       color: color.dark.dark70,
-      fontFamily: FONTS.REGULAR
+      fontFamily: FONTS.REGULAR,
+      fontSize:theme.fontSizes.sm
     },
     completedInfo: {
       color: color.dark.dark50,
-      fontFamily: FONTS.REGULAR
+      fontFamily: FONTS.REGULAR,
+      fontSize:theme.fontSizes.sm
     },
     timeLeft: {
       color: color.dark.dark70,
-      fontFamily: FONTS.REGULAR
+      fontFamily: FONTS.REGULAR,
+      fontSize:theme.fontSizes.sm
     },
     lastRow: {
       borderTopColor: color.dark.dark10,

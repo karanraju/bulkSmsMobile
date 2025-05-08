@@ -12,7 +12,7 @@ export const HorizontalLine = () => {
           style={{
             height: 1,
             backgroundColor: theme?.colors?.dark?.dark5, // You can change this to any color
-            width: '96%', // or set to a fixed width like 200
+            width: '115%', // or set to a fixed width like 200
             marginVertical: 10, // optional spacing
           }}
         />

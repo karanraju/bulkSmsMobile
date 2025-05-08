@@ -7,9 +7,11 @@ interface DropdownItem {
 
 export interface CustomDropdownProps {
   data: DropdownItem[];
-  value: string | null;
-  setValue: (value: string) => void;
-  placeholder: string;
+  // value: string | null;
+  value: any;
+  setValue: any;
+  // setValue: (value: string) => void;
+  placeholder?: string;
   icon?: React.ReactNode;
   containerStyle?: StyleProp<ViewStyle>;
   itemContainerStyle?: StyleProp<ViewStyle>;

@@ -205,7 +205,7 @@ export const stylesHome = StyleSheet.create({
     fontWeight: 'bold',
   },
   mainContainer: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'column',
     padding:16,
     gap:12

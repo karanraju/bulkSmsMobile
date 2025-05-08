@@ -18,7 +18,7 @@ import Animated, {
   useAnimatedStyle,
   withSpring,
 } from 'react-native-reanimated';
-import Route from './src/route/index.tsx';
+import Route from './src/route/Route';
 import {store} from './src/redux/store';
 
 const Tab = createBottomTabNavigator();

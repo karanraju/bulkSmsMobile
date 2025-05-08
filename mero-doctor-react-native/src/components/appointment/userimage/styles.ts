@@ -1,5 +1,7 @@
 import {StyleSheet} from 'react-native';
 import { FONTS } from '../../../style/fonts';
+import color from '../../../style/color';
+import theme from '../../../style/theme';
 
 export const styles = StyleSheet.create({
   avatar: {
@@ -14,7 +16,8 @@ export const styles = StyleSheet.create({
     paddingTop: 10,
   },
   text: {
-    color: 'black',
-    fontFamily:FONTS.SEMIBOLD
+    color:color.dark.dark100,
+    fontFamily:FONTS.SEMIBOLD,
+    fontSize:theme.fontSizes.xs
   },
 });

@@ -4,12 +4,14 @@ import {DrawerNavigationProp} from '@react-navigation/drawer';
 import {TouchableOpacity} from 'react-native';
 import theme from '../../style/theme';
 import BellIcon from '../../assets/svg/BellIcon';
-import { FONTS } from '../../style/fonts';
+import {FONTS} from '../../style/fonts';
 import color from '../../style/color';
 import SupportIcon from '../../assets/svg/SupportIcon';
 import DrawerIcon from '../../assets/svg/DrawerIcon';
 import SearchIcon from '../../assets/svg/SearchIcon';
 import StarIcon from '../../assets/svg/StarIcon';
+import LeftArrow from '../../assets/svg/LeftArrow';
+import { CustomHeaderProps } from './types';
 
 type RootParamList = {
   Home: undefined;
@@ -23,10 +25,16 @@ type HeaderButtonProps = {
   title?: string;
   onPress: () => void;
   style?: object;
-  count?:string;
+  count?: string;
 };
 
-export const HeaderButton = ({icon, title, onPress, style, count}: HeaderButtonProps) => {
+export const HeaderButton = ({
+  icon,
+  title,
+  onPress,
+  style,
+  count,
+}: HeaderButtonProps) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View
@@ -41,24 +49,26 @@ export const HeaderButton = ({icon, title, onPress, style, count}: HeaderButtonP
           borderColor: color.custom.border,
           ...style,
         }}>
-        <View style={{ position: 'relative' }}>
+        <View style={{position: 'relative'}}>
           {icon}
           {count && (
-            <View style={{
-              position: 'absolute',
-              bottom: -20,
-              left: -20,
-              backgroundColor: color.orange.orange100,
-              borderRadius: 12,
-              width: 18,
-              height: 18,
-              alignItems: 'center',
-            }}>
-              <Text style={{
-                color: 'white',
-                fontSize: theme.fontSizes.xs,
-                fontFamily: FONTS.BOLD,
+            <View
+              style={{
+                position: 'absolute',
+                bottom: -20,
+                left: -20,
+                backgroundColor: color.orange.orange100,
+                borderRadius: 12,
+                width: 18,
+                height: 18,
+                alignItems: 'center',
               }}>
+              <Text
+                style={{
+                  color: 'white',
+                  fontSize: theme.fontSizes.xs,
+                  fontFamily: FONTS.BOLD,
+                }}>
                 {count}
               </Text>
             </View>
@@ -80,55 +90,83 @@ export const HeaderButton = ({icon, title, onPress, style, count}: HeaderButtonP
   );
 };
 
-export const CustomHeader = ({ title,showSupportButton }: { title?: string, showSupportButton?:boolean }) => {
+export const CustomHeader = ({
+  title,
+  showSupportButton,
+  showBackButton
+}:CustomHeaderProps) => {
   const navigation = useNavigation<HomeScreenNavigationProp>();
   const route = useRoute();
-  const headerTitle = title || route.name || "Dashboard";
-  
+  const headerTitle = title || route.name || 'Dashboard';
+
   const openDrawer = () => {
     navigation.openDrawer();
   };
-  
+
   return (
-    <View style={{backgroundColor:color.white.white100,paddingVertical:10}}>
+    <View style={{backgroundColor: color.white.white100, paddingVertical: 10}}>
       <View
         style={{
           flexDirection: 'row',
           justifyContent: 'space-between',
-          alignItems:'center',
+          alignItems: 'center',
         }}>
-        <View style={{flexDirection: 'row', gap: 8}}>
-        <TouchableOpacity onPress={openDrawer}>
+        <View style={{flexDirection: 'row',alignItems:'center'}}>
+          {/* {showBackButton && <TouchableOpacity onPress={openDrawer}>
             <View style={{marginLeft: 12}}>
-               <DrawerIcon height={40} width={40}/>
-             </View>
-           </TouchableOpacity>
-          
-          <Text style={{color:color.dark.dark80,fontFamily:FONTS.BOLD,alignSelf:'center',fontSize:theme.fontSizes.lg}}>
+              <LeftArrow height={16} width={16} />
+            </View>
+          </TouchableOpacity>} */}
+          {showBackButton && <TouchableOpacity onPress={()=>navigation.goBack()} style={{padding:12,paddingRight:0}}>
+              <LeftArrow height={16} width={16} />
+          </TouchableOpacity>}
+
+          <Text
+            style={{
+              color: color.dark.dark80,
+              fontFamily: FONTS.BOLD,
+              alignSelf: 'center',
+              fontSize: theme.fontSizes.lg,
+              marginLeft:16
+            }}>
             {headerTitle}
           </Text>
         </View>
-          <View style={{flexDirection:'row',gap:8}}>
-          {showSupportButton && <HeaderButton 
-            icon={<SupportIcon />} 
-            onPress={() => {/* Handle notification press */}}
-            style={{paddingHorizontal: 18}}
-            title='Support'
-          />}
-          {false && <HeaderButton 
-            icon={<SearchIcon />} 
-            onPress={() => {/* Handle notification press */}}
-            />}
-            {false && <HeaderButton 
-              icon={<StarIcon />} 
-              onPress={() => {/* Handle notification press */}}
+        <View style={{flexDirection: 'row', gap: 8}}>
+          {showSupportButton && (
+            <HeaderButton
+              icon={<SupportIcon />}
+              onPress={() => {
+                /* Handle notification press */
+              }}
+              style={{paddingHorizontal: 18}}
+              title="Support"
+            />
+          )}
+          {true && (
+            <HeaderButton
+              icon={<SearchIcon />}
+              onPress={() => {
+                /* Handle notification press */
+              }}
+            />
+          )}
+          {false && (
+            <HeaderButton
+              icon={<StarIcon />}
+              onPress={() => {
+                /* Handle notification press */
+              }}
               style={{marginRight: 12}}
-            />}
-          <HeaderButton 
-            icon={<BellIcon />} 
-            onPress={() => {/* Handle notification press */}}
+            />
+          )}
+          <HeaderButton
+            icon={<BellIcon />}
+            onPress={() => {
+              /* Handle notification press */
+            }}
             style={{marginRight: 12}}
-            count='8'
+            count="8"
           />
         </View>
       </View>

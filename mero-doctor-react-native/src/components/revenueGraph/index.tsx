@@ -6,8 +6,8 @@ import {FONTS} from '../../style/fonts';
 import GrowIcon from '../../assets/svg/GrowIcon';
 import {revenueGraphstyles as styles} from './styles';
 import theme from '../../style/theme';
-import {stylesHome} from '../../screens/Home/styles';
 import {LineChart} from 'react-native-gifted-charts';
+import { stylesHome } from '../../screens/Doctor/Home/styles';
 
 interface DropdownItem {
   label: string;

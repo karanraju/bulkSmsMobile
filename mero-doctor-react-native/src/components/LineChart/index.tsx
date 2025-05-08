@@ -1,5 +1,5 @@
 import {Text, TouchableOpacity, View} from 'react-native';
-import {stylesHome} from '../../screens/Home/styles';
+import { stylesHome } from '../../screens/Doctor/Home/styles';
 import {useState} from 'react';
 import theme from '../../style/theme';
 import {LineChart} from 'react-native-gifted-charts';
@@ -96,7 +96,7 @@ export const CustomLineChart = () => {
         xAxisLabelTexts={xAxisLabels}
         xAxisLabelTextStyle={stylesHome.chartAxisText}
         yAxisTextStyle={stylesHome.chartAxisText}
-        width={300}
+        width={250}
         height={200}
         areaChart
         curved

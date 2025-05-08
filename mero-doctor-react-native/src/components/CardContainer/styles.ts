@@ -4,8 +4,9 @@ import theme from '../../style/theme';
 export const CardContianerStyles = StyleSheet.create({
   container: {
     backgroundColor: theme?.colors?.white?.white70,
-    borderRadius: 8,
+    borderRadius: 12,
     // margin: 8,
     // flexWrap: 'wrap',
+    padding:12,
   },
 });

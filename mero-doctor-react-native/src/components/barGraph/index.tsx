@@ -50,7 +50,7 @@ const CustomBarGraph: React.FC<CustomBarGraphProps> = ({
 
   return (
     <View style={graphStyles.container}>
-      <View style={{zIndex: 0}}>
+      <View style={{zIndex: 0, marginRight: 50}}>
         <HorizontalLine />
         <HorizontalLine />
         <HorizontalLine />
@@ -60,6 +60,7 @@ const CustomBarGraph: React.FC<CustomBarGraphProps> = ({
           <HorizontalLine />
         </View>
       </View>
+      
       <View style={{position: 'absolute', zIndex: 10, marginTop: 28}}>
         <Svg width={width} height={height}>
           {data.map((item, index) => {

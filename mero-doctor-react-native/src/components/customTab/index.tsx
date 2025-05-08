@@ -5,7 +5,7 @@ import {useState} from 'react';
 import {customTabsProps} from './types';
 
 export const CustomTab: React.FC<customTabsProps> = ({tabs}) => {
-  const [selectedTab, setSelectedTab] = useState('hospital');
+  const [selectedTab, setSelectedTab] = useState(tabs[0].id);
   const handleTabSelect = (tabId: string) => {
     setSelectedTab(tabId);
     console.log('Selected tab:', tabId);

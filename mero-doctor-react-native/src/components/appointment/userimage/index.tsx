@@ -10,10 +10,10 @@ export const UserImage: React.FC<UserImageProps> = () => {
       <View style={styles.userContainer}>
         <Avatar.Image
           size={45}
-          source={require('../../../assets/png/AvatarCircle.png')}
+          source={require('../../../assets/png/Doctor1.png')}
         />
         <View style={styles.nameing}>
-          <Text style={styles.text}>mansm</Text>
+          <Text style={styles.text}>Dr. Upendra Devkota</Text>
         </View>
       </View>
     </View>

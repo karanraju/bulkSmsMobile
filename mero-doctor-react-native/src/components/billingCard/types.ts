@@ -9,4 +9,5 @@ export interface ReportDetailsProps{
     billStatus?:string
     totalAmount?:string
     timing?:string
+    onViewDetails?:()=>void
 }

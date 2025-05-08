@@ -10,7 +10,7 @@ import RevenueGraphComponent from '../../../components/revenueGraph';
 export const Follow = () => {
   return (
     <>
-      <ScrollView>
+      <ScrollView contentContainerStyle={{padding:16,gap:12}}>
         <View style={styles.staffInfoContainer}>
           <StaffInfo
             title="Total Staffs"
@@ -64,20 +64,20 @@ export const Follow = () => {
 
 const styles = StyleSheet.create({
   staffInfoContainer: {
-    margin: 12,
+    // margin: 12,
     flexDirection: 'row',
     flexWrap: 'wrap',
     borderRadius: 12,
     overflow: 'hidden',
   },
   census: {
-    margin: 12,
+    // margin: 12,
     backgroundColor: color.neutral.white,
     borderRadius: 12,
+    padding:8
   },
   graph: {
     flex: 1,
-    margin: 12,
     borderRadius: 12,
     backgroundColor: color.neutral.white,
   },
